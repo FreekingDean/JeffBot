@@ -1,3 +1,4 @@
+require 'engtagger'
 module Lexicon
   def Lexicon.clean(str)
     result = ""
@@ -7,7 +8,10 @@ module Lexicon
     return result.strip.downcase
   end
   def Lexicon.get_subject(query)
-    return query.split(" ")[rand(query.split(" ").length)]
+    tagger = EngTagger.new
+    nouns = tagger.get_nouns(tagger.add_tags(query)).keys.sample
+    return nouns unless nouns.nil?
+    return query.split(" ").sample
   end
   def Lexicon.get_tokens(query)
     return query.split(" ")

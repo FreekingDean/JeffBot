@@ -7,6 +7,7 @@ gem 'standalone_migrations'
 gem "pg"
 gem "rake"
 gem 'engtagger'
+gem 'xml-simple'
 gem 'json'
 gem 'awesome_print'
 gem 'celluloid-io'
