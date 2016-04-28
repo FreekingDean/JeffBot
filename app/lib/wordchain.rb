@@ -19,6 +19,6 @@ class WordChain
     tokens.each do |token|
       return token if rand < 0.9
     end
-    return token.last
+    return tokens.last
   end
 end
