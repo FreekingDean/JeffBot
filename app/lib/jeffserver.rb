@@ -43,8 +43,8 @@ class JeffServer
   def parse_message(message_parser, payload)
     message_parser.go(payload)
   rescue StandardError => ex
-    ap ex
     ap ex.backtrace
+    ap ex
     "ERROR: #{ex}"
   end
 end
