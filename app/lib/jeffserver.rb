@@ -26,11 +26,15 @@ class JeffServer
     @ch.queue.subscribe(block: blocking) do |_, properties, payload|
       r = parse_message(message_parser, payload)
 
-      @ch.default_exchange.publish(
-        r,
-        routing_key: properties.reply_to,
-        correlation_id: properties.correlation_id
-      ) if respond
+      begin
+        @ch.default_exchange.publish(
+          r,
+          routing_key: properties.reply_to,
+          correlation_id: properties.correlation_id
+        ) if respond
+      rescue StandardError => ex
+        ap ex
+      end
     end
   end
 
