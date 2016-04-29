@@ -15,7 +15,7 @@ begin
   server.learn
   server.start
 rescue StandardError => ex
-  puts ex
+  ap ex
   ch.close
   conn.close
 end
