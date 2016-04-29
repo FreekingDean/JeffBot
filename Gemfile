@@ -11,6 +11,7 @@ gem 'xml-simple'
 gem 'json'
 gem 'awesome_print'
 gem 'celluloid-io'
+gem 'colorize'
 
 group :development do
   gem 'foreman'
