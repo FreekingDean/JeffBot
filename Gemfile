@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby "2.3.0"
+ruby '2.3.0'
 
 gem 'bunny'
 gem 'standalone_migrations'
-gem "pg"
-gem "rake"
+gem 'pg'
+gem 'rake'
 gem 'engtagger'
 gem 'xml-simple'
 gem 'json'
@@ -18,4 +18,8 @@ end
 
 group :test do
   gem 'codacy-coverage'
+end
+
+group :development, :test do
+  gem 'rubocop', require: false
 end

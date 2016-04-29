@@ -1,11 +1,16 @@
-module Ngram
-    def Ngram.ngrams(n, string)
-        string.split(' ').each_cons(n).to_a
+# Ngram fings a set of Xgrams in a sentence
+class Ngram
+  class << self
+    def ngrams(n, string)
+      string.split(' ').each_cons(n).to_a
     end
-    def Ngram.bigram(string)
-        return ngrams(2, string)
+
+    def bigram(string)
+      ngrams(2, string)
     end
-    def Ngram.trigram(string)
-        return ngrams(3, string)
+
+    def trigram(string)
+      ngrams(3, string)
     end
+  end
 end

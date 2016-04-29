@@ -1,29 +1,40 @@
 require_relative 'wordchain'
 
-module Formulator
-  def Formulator.create_sentence(length, subject)
-    iterator = 0
-    result = []
-    result << subject.chomp
-    previous_token = subject
-    token = WordChain.bigram_word(previous_token)
-    for _ in 0..length*5
-      break if token.blank?
-      result << token.chomp
-      earlier_token = previous_token
-      previous_token = token
+# Formulator makes the sentences
+class Formulator
+  class << self
+    def create_sentence(length, subject)
+      result = []
+      result << subject.chomp
+      previous_token = subject
+      token = WordChain.bigram_word(previous_token)
+      (0..length).each do |_|
+        break if token.blank?
+        result << token.chomp
+        earlier_token = previous_token
+        previous_token = token
+        token = next_word(previous_token, earlier_token)
+      end
+      sentencify(result)
+    end
+
+    def create_sentence_random(subject)
+      create_sentence(3 + rand(8), subject)
+    end
+
+    private
+
+    def next_word(previous_token, earlier_token)
       token = WordChain.next_word([earlier_token, previous_token])
-      if token.blank? || ([false]*5+[true]).sample
-        break if [true, false, false].sample
-        token = WordChain.bigram_word(previous_token)
+      if token.blank? && rand < 0.6 || rand < 0.3
+        WordChain.bigram_word(previous_token)
+      else
+        token
       end
     end
 
-    result[0] = result[0].titleize
-    "#{result.join(' ')}."
-  end
-
-  def Formulator.create_sentence_random(subject)
-    return Formulator.create_sentence(3 + rand(8), subject)
+    def sentencify(word_arr)
+      "#{word_arr.first[0].titelize} #{word_arr[1..-1].join(' ')}."
+    end
   end
 end
