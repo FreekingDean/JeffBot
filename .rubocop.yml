@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+
+Metrics/MethodLength:
+  Max: 15
