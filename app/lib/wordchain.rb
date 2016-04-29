@@ -24,7 +24,7 @@ class WordChain
       return '' if tokens.length.blank?
 
       tokens.each do |token|
-        return token if rand < 0.9
+        return token if rand < 0.75
       end
 
       tokens.last
