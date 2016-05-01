@@ -26,6 +26,10 @@ class WordChain
       old_count = 0
       tokens.each do |word, count|
         old_count += count
+        ap old_count
+        ap count
+        ap old_count/(tokens.values.inject(:+))
+        ap (old_count/(tokens.values.inject(:+)))*5
         return word if rand < ((old_count/(tokens.values.inject(:+)))*5)
       end
 
