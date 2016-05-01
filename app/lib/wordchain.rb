@@ -21,6 +21,7 @@ class WordChain
     private
 
     def find_best_token(tokens)
+      ap tokens
       return '' if tokens.any?
 
       old_count = 0
