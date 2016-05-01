@@ -23,8 +23,10 @@ class WordChain
     def find_best_token(tokens)
       return '' if tokens.any?
 
+      old_count = 0
       tokens.each do |word, count|
-        return word if rand < (count/(tokens.values.inject(:+)))
+        old_count += count
+        return word if rand < (old_count/(tokens.values.inject(:+)))
       end
 
       tokens.keys.last
