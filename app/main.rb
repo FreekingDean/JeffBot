@@ -1,3 +1,4 @@
+$stdout.sync = true
 require './config/application'
 require 'bunny'
 require_relative '../config/environments'
