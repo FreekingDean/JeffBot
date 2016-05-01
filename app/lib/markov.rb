@@ -8,6 +8,7 @@ require_relative 'learn'
 class Markov
   def self.go(query)
     if Lexicon.get_number_of_tokens(query) >= 3
+      ap query
       grams = Ngram.trigram(query)
       Learn.train_array(grams)
     end
