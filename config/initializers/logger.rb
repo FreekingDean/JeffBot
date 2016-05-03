@@ -1,4 +1,5 @@
 require 'colorize'
+require 'awesome_print'
 
 # Color logger adds a little flair to your logs
 class ColorLogger < Logger

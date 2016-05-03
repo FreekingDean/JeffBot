@@ -11,6 +11,6 @@ Dir["#{File.dirname(__FILE__)}/../config/initializers/*.rb"].each { |file| requi
 
 # require app files
 Dir["#{File.dirname(__FILE__)}/../app/**/*.rb"].each { |file|
-  ap file
+  puts file
   require file
 }
