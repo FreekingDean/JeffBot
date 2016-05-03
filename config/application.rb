@@ -1,6 +1,7 @@
 require 'active_record'
 require 'active_support'
 require 'active_support/core_ext'
+require 'bunny'
 
 # require config files
 Dir['./config/*.rb'].each { |file| require file }

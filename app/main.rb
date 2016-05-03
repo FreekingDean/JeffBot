@@ -1,11 +1,5 @@
 $stdout.sync = true
 require './config/application'
-require 'bunny'
-require_relative '../config/environments'
-require_relative 'lib/botsolver'
-require_relative 'lib/responder'
-require_relative 'lib/learner'
-require_relative 'lib/jeffserver'
 
 begin
   logger = ColorLogger.new(STDOUT)
