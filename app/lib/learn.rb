@@ -1,19 +1,31 @@
-require 'active_record'
-require_relative '../models/entries'
-
 # Learn remembers old inputs
 class Learn
   class << self
-    def train_array(inputs)
-      inputs.each do |input|
-        train(input)
+    def train_phrase(input)
+      Lexicon.clean!(input)
+      tagger = Tagger.new(input)
+      train_array(
+        Ngram.current_gram(Lexicon.get_tokens(input)),
+        tagger.tag_array
+      )
+    end
+
+    def train_array(inputs, tags)
+      inputs.each_with_index do |input, index|
+        trainable = {
+          word: input[0],
+          nword: input[1],
+          definition: input[2]
+        }
+        tag = tags[index].nil? ? tags[index] : '?'
+
+        train(trainable, tag)
       end
     end
 
-    def train(input)
-      learn_data = Entries.find_or_initialize_by(
-        word: input[0], nword: input[1], definition: input[2]
-      )
+    def train(input, tag)
+      learn_data = Entries.find_or_initialize_by(input)
+      learn_data.tag ||= tag
       learn_data.count = learn_data.count + 1
       learn_data.save
     end

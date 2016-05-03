@@ -1,16 +1,21 @@
 # Ngram fings a set of Xgrams in a sentence
 class Ngram
+  CURRENT_GRAM_NUMBER = 3
   class << self
-    def ngrams(n, string)
-      string.split(' ').each_cons(n).to_a
+    def ngrams(n, array)
+      array.each_cons(n).to_a
     end
 
-    def bigram(string)
-      ngrams(2, string)
+    def bigram(array)
+      ngrams(2, array)
     end
 
-    def trigram(string)
-      ngrams(3, string)
+    def trigram(array)
+      ngrams(3, array)
+    end
+
+    def current_gram(array)
+      ngrams(CURRENT_GRAM_NUMBER, array)
     end
   end
 end

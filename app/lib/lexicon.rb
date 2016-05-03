@@ -1,19 +1,19 @@
-require 'engtagger'
-
 # Lexicon parses a sentence Lexographically
 module Lexicon
   class << self
+    def clean!(str)
+      str.tr!('/', ' ')
+      str.strip!
+      str.downcase!
+    end
+
     def clean(str)
-      result = ''
-      get_tokens(str).each do |token|
-        result = result + ' ' + token.gsub(/[^a-zA-Z]/, '')
-      end
-      result.strip.downcase
+      str.tr('/', ' ').strip.downcase
     end
 
     def get_subject(query)
-      tagger = EngTagger.new
-      nouns = tagger.get_nouns(tagger.add_tags(query)).keys.sample
+      tagger = Tagger.new(clean(query))
+      nouns = tagger.nouns.sample
       return nouns unless nouns.nil?
       query.split(' ').sample
     end

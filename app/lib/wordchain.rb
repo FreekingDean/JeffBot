@@ -14,7 +14,9 @@ class WordChain
 
     def bigram_word(previous_token)
       find_best_token(
-        Entries.where(word: previous_token).order(count: :desc).pluck(:nword, :count).to_h
+        Entries.where(word: previous_token)
+        .order(count: :desc)
+        .pluck(:nword, :count).to_h
       )
     end
 
@@ -26,7 +28,7 @@ class WordChain
       old_count = 0
       tokens.each do |word, count|
         old_count += count
-        return word if rand < (old_count/(tokens.values.inject(:+)))
+        return word if rand < (old_count / tokens.values.inject(:+))
       end
 
       tokens.keys.last
