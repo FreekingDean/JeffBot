@@ -15,6 +15,6 @@ end
 
 # require app files
 Dir["#{File.dirname(__FILE__)}/../app/**/*.rb"].each do |file|
-  next if file.contains?('app/main.rb')
+  next if file.include?('app/main.rb')
   require file
 end
