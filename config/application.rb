@@ -18,3 +18,9 @@ Dir["#{File.dirname(__FILE__)}/../app/**/*.rb"].each do |file|
   next if file.include?('app/main.rb')
   require file
 end
+
+class App
+  class << self
+    attr_accessor :logger
+  end
+end

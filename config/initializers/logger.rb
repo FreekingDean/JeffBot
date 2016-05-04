@@ -7,8 +7,12 @@ class ColorLogger < Logger
     super(text.yellow)
   end
 
-  def error(text)
-    super(text.red)
+  def error(ex)
+    if ex.is_a? Exception
+      super("#{ex.to_s.red}\n#{ex.backtrace.map{|bt| bt.red}.join("\n\t")}".red)
+    else
+      super(ex.red)
+    end
   end
 
   def debug(text)

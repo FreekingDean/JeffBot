@@ -11,6 +11,11 @@ class Tagger
     tagger.get_nouns(@old_tagged).keys
   end
 
+  def proper_nouns
+    tags = Hash.from_xml("<xml>#{@old_tagged}</xml>")['xml']
+    tags['PPN'] || []
+  end
+
   def tag_hash
     Lexicon.get_tokens(@tagged).map { |wt| wt.split('/') }.to_h
   end

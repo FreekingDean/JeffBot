@@ -21,7 +21,7 @@ class JeffServer
   private
 
   def subscribe(queue_name, message_parser, blocking: false, respond: false)
-    ap "STARTING QUEUE #{queue_name}"
+    App.logger.info "STARTING QUEUE #{queue_name}"
     queue = @ch.queue(queue_name)
     exchange = @ch.default_exchange
 
@@ -35,7 +35,7 @@ class JeffServer
           correlation_id: properties.correlation_id
         ) if respond
       rescue StandardError => ex
-        ap ex
+        App.logger.error ex
       end
     end
   end
@@ -43,8 +43,7 @@ class JeffServer
   def parse_message(message_parser, payload)
     message_parser.go(payload)
   rescue StandardError => ex
-    ap ex.backtrace
-    ap ex
+    App.logger.error ex
     "ERROR: #{ex}"
   end
 end

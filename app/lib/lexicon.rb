@@ -14,6 +14,8 @@ module Lexicon
     def get_subject(query)
       tagger = Tagger.new(clean(query))
       nouns = tagger.nouns.sample
+      proper_nouns = tagger.proper_nouns.sample
+      return proper_nouns unless proper_nouns.nil?
       return nouns unless nouns.nil?
       query.split(' ').sample
     end
