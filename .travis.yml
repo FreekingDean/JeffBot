@@ -8,6 +8,7 @@ env:
   global:
     - RACK_ENV=test
 services:
+  - postgresql
   - rabbitmq
 notifications:
   email:
@@ -20,13 +21,11 @@ branches:
     - master
 install:
   - bundle install
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp db/config.travis.yml db/config.yml
 script:
-  - ./scripts/setupdb.sh
-#  - ruby ./backend/main.rb &
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
   - bundle exec rspec --color -p
   - bundle exec rubocop
-deploy:
-  provider: heroku
-  api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
-  app: jeffchatbot-backend
-  run: "rake db:migrate --trace"
