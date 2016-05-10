@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/ARMmaster17/JeffBot.svg?branch=master)](https://travis-ci.org/ARMmaster17/JeffBot)
+[![Build Status](https://travis-ci.org/FreekingDean/JeffBot.svg?branch=master)](https://travis-ci.org/FreekingDean/JeffBot)
+[![Test Coverage](https://codeclimate.com/github/FreekingDean/JeffBot/badges/coverage.svg)](https://codeclimate.com/github/FreekingDean/JeffBot/coverage)
+[![Code Climate](https://codeclimate.com/github/FreekingDean/JeffBot/badges/gpa.svg)](https://codeclimate.com/github/FreekingDean/JeffBot)
 [![Gratipay Team](https://img.shields.io/gratipay/team/JeffBot-AI.svg?maxAge=2592000?style=flat-square)](https://gratipay.com/JeffBot-AI/)
 
 # JeffBot
