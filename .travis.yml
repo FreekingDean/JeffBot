@@ -12,7 +12,7 @@ services:
 notifications:
   email:
     recipients:
-      - wordman05@gmail.com
+      - deangalvin3@gmail.com
     on_success: change
     on_failure: always
 branches:
@@ -23,7 +23,8 @@ install:
 script:
   - ./scripts/setupdb.sh
 #  - ruby ./backend/main.rb &
-  - rake test --trace
+  - bundle exec rspec --color -p
+  - bundle exec rubocop
 deploy:
   provider: heroku
   api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
