@@ -9,7 +9,7 @@ class ColorLogger < Logger
 
   def error(ex)
     if ex.is_a? Exception
-      super("#{ex.to_s.red}\n#{ex.backtrace.map{|bt| bt.red}.join("\n\t")}".red)
+      super("#{ex.to_s.red}\n#{ex.backtrace.map(&:red).join("\n\t")}".red)
     else
       super(ex.red)
     end

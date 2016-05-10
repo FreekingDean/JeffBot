@@ -19,6 +19,7 @@ Dir["#{File.dirname(__FILE__)}/../app/**/*.rb"].each do |file|
   require file
 end
 
+# This is the main application and holds all the keys
 class App
   class << self
     attr_accessor :logger
