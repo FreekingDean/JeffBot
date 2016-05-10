@@ -13,11 +13,15 @@ gem 'awesome_print'
 gem 'celluloid-io'
 gem 'colorize'
 
+group :development, :test do
+  gem 'rubocop', require: false
+  gem 'rspec'
+end
+
 group :development do
   gem 'foreman'
 end
 
-group :development, :test do
-  gem 'rubocop', require: false
-  gem 'rspec'
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
 end
