@@ -17,10 +17,7 @@ group :development do
   gem 'foreman'
 end
 
-group :test do
-  gem 'codacy-coverage'
-end
-
 group :development, :test do
   gem 'rubocop', require: false
+  gem 'rspec'
 end
