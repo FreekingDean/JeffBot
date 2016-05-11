@@ -7,3 +7,7 @@ else
 end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
+
+if ENV['RACK_ENV'] == 'test'
+  ActiveRecord::Base.logger.level = :error
+end
