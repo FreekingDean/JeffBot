@@ -6,7 +6,7 @@ describe Botsolver do
   let(:cleaned_phrase) { Lexicon.clean(phrase) }
 
   it 'should clean the argument' do
-    expect(Lexicon).to receive(:clean).with(/#{phrase}|#{cleaned_phrase}/).at_least(:once).and_return(cleaned_phrase)
+    expect(Lexicon).to receive(:clean).with(%r(#{phrase}|#{cleaned_phrase})).at_least(:once).and_return(cleaned_phrase)
     Botsolver.go(phrase)
   end
 

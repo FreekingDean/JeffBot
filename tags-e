@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+AddDefaultToEntry	db/migrate/20160429053140_add_default_to_entry.rb	/^class AddDefaultToEntry < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+AddNwordToEntries	db/migrate/20160427050108_add_nword_to_entries.rb	/^class AddNwordToEntries < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+AddPosToEntry	db/migrate/20160427233119_add_pos_to_entry.rb	/^class AddPosToEntry < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+App	config/application.rb	/^class App$/;"	c
+Botsolver	app/lib/botsolver.rb	/^class Botsolver$/;"	c
+CURRENT_GRAM_NUMBER	app/lib/ngram.rb	/^  CURRENT_GRAM_NUMBER = 3$/;"	C	class:Ngram
+ColorLogger	config/initializers/logger.rb	/^class ColorLogger < Logger$/;"	c	inherits:Logger
+CreateEntries	db/migrate/20160422190000_create_entries.rb	/^class CreateEntries < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+Entries	app/models/entries.rb	/^class Entries < ActiveRecord::Base$/;"	c	inherits:ActiveRecord.Base
+Formulator	app/lib/formulator.rb	/^class Formulator$/;"	c
+JeffServer	app/lib/jeffserver.rb	/^class JeffServer$/;"	c
+Learn	app/lib/learn.rb	/^class Learn$/;"	c
+Learner	app/lib/learner.rb	/^class Learner$/;"	c
+Lexicon	app/lib/lexicon.rb	/^module Lexicon$/;"	m
+Markov	app/lib/markov.rb	/^class Markov$/;"	c
+Ngram	app/lib/ngram.rb	/^class Ngram$/;"	c
+RenamePartOfSpeachToTag	db/migrate/20160503002237_rename_part_of_speach_to_tag.rb	/^class RenamePartOfSpeachToTag < ActiveRecord::Migration$/;"	c	inherits:ActiveRecord.Migration
+Responder	app/lib/responder.rb	/^class Responder$/;"	c
+Tagger	app/lib/tagger.rb	/^class Tagger$/;"	c
+WordChain	app/lib/wordchain.rb	/^class WordChain$/;"	c
+bigram	app/lib/ngram.rb	/^    def bigram(array)$/;"	F	class:Ngram
+bigram_word	app/lib/wordchain.rb	/^    def bigram_word(previous_token)$/;"	F	class:WordChain
+change	db/migrate/20160427050108_add_nword_to_entries.rb	/^  def change$/;"	f	class:AddNwordToEntries
+change	db/migrate/20160427233119_add_pos_to_entry.rb	/^  def change$/;"	f	class:AddPosToEntry
+change	db/migrate/20160429053140_add_default_to_entry.rb	/^  def change$/;"	f	class:AddDefaultToEntry
+change	db/migrate/20160503002237_rename_part_of_speach_to_tag.rb	/^  def change$/;"	f	class:RenamePartOfSpeachToTag
+clean	app/lib/lexicon.rb	/^    def clean(str)$/;"	F	class:Lexicon
+clean!	app/lib/lexicon.rb	/^    def clean!(str)$/;"	F	class:Lexicon
+create_sentence	app/lib/formulator.rb	/^    def create_sentence(length, subject)$/;"	F	class:Formulator
+create_sentence_random	app/lib/formulator.rb	/^    def create_sentence_random(subject)$/;"	F	class:Formulator
+current_gram	app/lib/ngram.rb	/^    def current_gram(array)$/;"	F	class:Ngram
+debug	config/initializers/logger.rb	/^  def debug(text)$/;"	f	class:ColorLogger
+down	db/migrate/20160422190000_create_entries.rb	/^  def down$/;"	f	class:CreateEntries
+equal_tokens?	app/lib/lexicon.rb	/^    def equal_tokens?(a, b)$/;"	F	class:Lexicon
+error	config/initializers/logger.rb	/^  def error(ex)$/;"	f	class:ColorLogger
+find_best_token	app/lib/wordchain.rb	/^    def find_best_token(tokens)$/;"	F	class:WordChain
+get_number_of_tokens	app/lib/lexicon.rb	/^    def get_number_of_tokens(query)$/;"	F	class:Lexicon
+get_subject	app/lib/lexicon.rb	/^    def get_subject(query)$/;"	F	class:Lexicon
+get_tokens	app/lib/lexicon.rb	/^    def get_tokens(query)$/;"	F	class:Lexicon
+go	app/lib/botsolver.rb	/^  def self.go(arg)$/;"	F	class:Botsolver
+go	app/lib/learner.rb	/^  def self.go$/;"	F	class:Learner
+go	app/lib/markov.rb	/^  def self.go(query)$/;"	F	class:Markov
+go	app/lib/responder.rb	/^  def self.go$/;"	F	class:Responder
+info	config/initializers/logger.rb	/^  def info(text)$/;"	f	class:ColorLogger
+initialize	app/lib/jeffserver.rb	/^  def initialize(ch)$/;"	f	class:JeffServer
+initialize	app/lib/tagger.rb	/^  def initialize(phrase)$/;"	f	class:Tagger
+learn	app/lib/jeffserver.rb	/^  def learn(queue_name: 'jeff_bot_learn')$/;"	f	class:JeffServer
+logger	config/application.rb	/^    attr_accessor :logger$/;"	F	class:App
+logger=	config/application.rb	/^    attr_accessor :logger$/;"	F	class:App
+next_word	app/lib/formulator.rb	/^    def next_word(previous_token, earlier_token)$/;"	F	class:Formulator
+next_word	app/lib/wordchain.rb	/^    def next_word(previous_tokens)$/;"	F	class:WordChain
+ngrams	app/lib/ngram.rb	/^    def ngrams(n, array)$/;"	F	class:Ngram
+nouns	app/lib/tagger.rb	/^  def nouns$/;"	f	class:Tagger
+parse_message	app/lib/jeffserver.rb	/^  def parse_message(message_parser, payload)$/;"	f	class:JeffServer
+proper_nouns	app/lib/tagger.rb	/^  def proper_nouns$/;"	f	class:Tagger
+respond	app/lib/jeffserver.rb	/^  def respond(queue_name: 'jeff_bot_respond')$/;"	f	class:JeffServer
+sentencify	app/lib/formulator.rb	/^    def sentencify(word_arr)$/;"	F	class:Formulator
+start	app/lib/jeffserver.rb	/^  def start(queue_name: 'jeff_bot')$/;"	f	class:JeffServer
+subscribe	app/lib/jeffserver.rb	/^  def subscribe(queue_name, message_parser, blocking: false, respond: false)$/;"	f	class:JeffServer
+tag_array	app/lib/tagger.rb	/^  def tag_array$/;"	f	class:Tagger
+tag_hash	app/lib/tagger.rb	/^  def tag_hash$/;"	f	class:Tagger
+tagger	app/lib/tagger.rb	/^  def tagger$/;"	f	class:Tagger
+train	app/lib/learn.rb	/^    def train(input, tag)$/;"	F	class:Learn
+train_array	app/lib/learn.rb	/^    def train_array(inputs, tags)$/;"	F	class:Learn
+train_phrase	app/lib/learn.rb	/^    def train_phrase(input)$/;"	F	class:Learn
+trigram	app/lib/ngram.rb	/^    def trigram(array)$/;"	F	class:Ngram
+up	db/migrate/20160422190000_create_entries.rb	/^  def up$/;"	f	class:CreateEntries
