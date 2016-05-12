@@ -40,3 +40,4 @@ log/newrelic_agent.log
 *.swo
 
 tags
+.DS_Store
