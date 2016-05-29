@@ -17,8 +17,3 @@ StandaloneMigrations::Configurator.environments_config do |env|
     nil
   end
 end
-
-task :test do
-  # system 'ruby ./backend/main.rb &'
-  # ruby 'test/test.rb'
-end

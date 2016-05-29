@@ -2,6 +2,7 @@ require 'active_record'
 require 'active_support'
 require 'active_support/core_ext'
 require 'bunny'
+require 'pry'
 
 # require config files
 Dir["#{File.dirname(__FILE__)}/../config/*.rb"].each do |file|

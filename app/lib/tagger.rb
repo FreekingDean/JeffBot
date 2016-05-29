@@ -12,8 +12,7 @@ class Tagger
   end
 
   def proper_nouns
-    tags = Hash.from_xml("<xml>#{@old_tagged}</xml>")['xml']
-    tags['PPN'] || []
+    tagger.get_proper_nouns(@old_tagged).keys
   end
 
   def tag_hash

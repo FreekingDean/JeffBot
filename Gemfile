@@ -16,6 +16,7 @@ gem 'colorize'
 group :development, :test do
   gem 'rubocop', require: false
   gem 'rspec'
+  gem 'pry'
 end
 
 group :development do

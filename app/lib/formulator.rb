@@ -1,5 +1,3 @@
-require_relative 'wordchain'
-
 # Formulator makes the sentences
 class Formulator
   class << self
