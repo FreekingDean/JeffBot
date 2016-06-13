@@ -1,7 +1,7 @@
 AllCops:
   Exclude:
     - 'vendor/**/*'
-    - 'spec/fixtures/**/*'
+    - 'spec/**/*'
     - 'db/**/*'
     - 'tmp/**/*'
 
