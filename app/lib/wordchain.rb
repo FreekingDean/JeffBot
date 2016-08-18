@@ -27,9 +27,10 @@ class WordChain
       ap tokens
 
       old_count = 0
-      tokens.each do |word, count|
+      total_count = tokens.values.inject(:+)
+      tokens.sort_by { |_, c| c } .reverse.each do |word, count|
         old_count += count
-        return word if rand < (old_count / tokens.values.inject(:+))
+        return word if rand < (old_count / total_count)
       end
 
       tokens.keys.last
