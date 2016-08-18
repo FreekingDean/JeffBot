@@ -25,7 +25,7 @@ class Learn
     end
 
     def train(input, tag)
-      learn_data = Entries.find_or_initialize_by(input.merge({tag: tag}))
+      learn_data = Entries.find_or_initialize_by(input.merge(tag: tag))
       learn_data.count = learn_data.count + 1
       learn_data.save
     end
