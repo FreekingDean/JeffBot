@@ -24,6 +24,7 @@ class WordChain
 
     def find_best_token(tokens)
       return '' unless tokens.any?
+      ap tokens
 
       old_count = 0
       tokens.each do |word, count|
