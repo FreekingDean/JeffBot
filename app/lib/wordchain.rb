@@ -24,11 +24,12 @@ class WordChain
 
     def find_best_token(tokens)
       return '' unless tokens.any?
-      ap tokens
 
       old_count = 0
       total_count = tokens.values.inject(:+)
-      tokens.sort_by { |_, c| c } .reverse.each do |word, count|
+      tokens = tokens.sort_by { |_, c| c } .reverse
+      ap tokens
+      tokens.each do |word, count|
         old_count += count
         return word if rand < (old_count / total_count)
       end
