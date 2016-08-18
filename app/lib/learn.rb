@@ -6,7 +6,7 @@ class Learn
       tagger = Tagger.new(input)
       train_array(
         Ngram.current_gram(Lexicon.get_tokens(input)),
-        tagger.tag_array
+        tagger.tag_array.flatten
       )
     end
 
@@ -18,7 +18,7 @@ class Learn
           gram_1: input[1],
           word: input[0]
         }
-        tag = tags[index].nil? ? tags[index] : '?'
+        tag = tags[index].nil? ? '?' : tags[index]
 
         train(trainable, tag)
       end
