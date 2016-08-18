@@ -7,8 +7,8 @@ class WordChain
   class << self
     def next_word(previous_tokens)
       find_best_token(
-        Entries.where(word: previous_tokens[0], nword: previous_tokens[1])
-          .order(count: :desc).pluck(:definition, :count).to_h
+        Entries.where(gram_2: previous_tokens[0], gram_1: previous_tokens[1])
+          .order(count: :desc).pluck(:word, :count).to_h
       )
     end
 
@@ -16,7 +16,7 @@ class WordChain
       find_best_token(
         Entries.where(word: previous_token)
         .order(count: :desc)
-        .pluck(:nword, :count).to_h
+        .pluck(:gram_1, :count).to_h
       )
     end
 

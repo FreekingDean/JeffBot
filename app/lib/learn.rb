@@ -11,11 +11,12 @@ class Learn
     end
 
     def train_array(inputs, tags)
+      inputs.reverse!
       inputs.each_with_index do |input, index|
         trainable = {
-          word: input[0],
-          nword: input[1],
-          definition: input[2]
+          gram_2: input[2],
+          gram_1: input[1],
+          word: input[0]
         }
         tag = tags[index].nil? ? tags[index] : '?'
 
@@ -24,8 +25,7 @@ class Learn
     end
 
     def train(input, tag)
-      learn_data = Entries.find_or_initialize_by(input)
-      learn_data.tag ||= tag
+      learn_data = Entries.find_or_initialize_by(input.merge({tag: tag}))
       learn_data.count = learn_data.count + 1
       learn_data.save
     end
