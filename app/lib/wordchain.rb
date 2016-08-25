@@ -14,9 +14,9 @@ class WordChain
 
     def bigram_word(previous_token)
       find_best_token(
-        Entries.where(word: previous_token)
+        Entries.where(gram_1: previous_token)
         .order(count: :desc)
-        .pluck(:gram_1, :count).to_h
+        .pluck(:word, :count).to_h
       )
     end
 
