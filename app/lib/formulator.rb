@@ -11,7 +11,7 @@ class Formulator
         result << token.chomp
         earlier_token = previous_token
         previous_token = token
-        token = next_word(previous_token, earlier_token)
+        token = next_word(earlier_token, previous_token)
       end
       sentencify(result)
     end
