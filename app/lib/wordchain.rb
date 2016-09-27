@@ -6,7 +6,7 @@ require_relative '../models/entries'
 class WordChain
   class << self
     def next_word(previous_tokens)
-      find_best_token(Entries.get_words(gram_1: previous_token[1], gram_2: previous_tokens[0]))
+      find_best_token(Entries.get_words(gram_1: previous_tokens[1], gram_2: previous_tokens[0]))
     end
 
     def bigram_word(previous_token)
@@ -19,13 +19,13 @@ class WordChain
       return '' unless tokens.any?
 
       old_count = 0
-      total_count = tokens.map(&:total).inject(:+)
-      tokens.each do |word, count|
-        old_count += count
-        return word if rand < (old_count / total_count)
+      total_count = tokens.map(&:total).inject(0, :+)
+      tokens.each do |entries|
+        old_count += entries.total
+        return entries.word if rand < (old_count / total_count)
       end
 
-      tokens.keys.last
+      entries.last.word
     end
   end
 end
