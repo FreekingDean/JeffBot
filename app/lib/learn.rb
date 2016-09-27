@@ -14,9 +14,9 @@ class Learn
       inputs.reverse!
       inputs.each_with_index do |input, index|
         trainable = {
-          gram_2: input[2],
+          gram_2: input[0],
           gram_1: input[1],
-          word: input[0]
+          word: input[2]
         }
         tag = tags[index].nil? ? '?' : tags[index]
 
