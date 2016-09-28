@@ -2,7 +2,6 @@
 module Lexicon
   class << self
     def clean!(str)
-      str.tr!('/', ' ')
       str.strip!
       str.downcase!
     end
