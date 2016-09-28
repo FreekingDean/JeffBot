@@ -2,12 +2,11 @@
 module Lexicon
   class << self
     def clean!(str)
-      str.strip!
-      str.downcase!
+      str = clean(str)
     end
 
     def clean(str)
-      str.tr('/', ' ').strip.downcase
+      str.strip.downcase
     end
 
     def get_subject(query)
