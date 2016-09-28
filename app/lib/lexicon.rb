@@ -2,7 +2,7 @@
 module Lexicon
   class << self
     def clean!(str)
-      str = clean(str)
+      str.replace clean(str)
     end
 
     def clean(str)
