@@ -24,7 +24,7 @@ class Formulator
 
     def next_word(earlier_token, previous_token)
       token = WordChain.next_word([earlier_token, previous_token])
-      if token.blank? && rand < 0.6 || rand < 0.3
+      if token.blank? && rand < 0.6 || rand < 0.1
         WordChain.bigram_word(previous_token)
       else
         token

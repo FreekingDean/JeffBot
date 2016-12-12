@@ -6,7 +6,9 @@ require_relative '../models/entries'
 class WordChain
   class << self
     def next_word(previous_tokens)
-      find_best_token(Entries.get_words(gram_1: previous_tokens[1], gram_2: previous_tokens[0]))
+      word_token = find_best_token(Entries.get_words(gram_1: previous_tokens[1], gram_2: previous_tokens[0]))
+      ap word_token
+      word_token
     end
 
     def bigram_word(previous_token)
