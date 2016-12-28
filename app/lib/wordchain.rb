@@ -17,6 +17,7 @@ class WordChain
 
     def find_best_token(tokens)
       return '' unless tokens.any?
+      ap(tokens.first(10))
 
       old_count = 0
       total_count = tokens.map(&:total).inject(0, :+)
