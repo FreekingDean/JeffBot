@@ -23,7 +23,7 @@ class WordChain
       total_count = tokens.map(&:count).inject(0, :+)
       tokens.each do |entries|
         old_count += entries.count
-        return entries.word if (rand * 1.25) < (old_count / total_count)
+        return entries.word if (rand * 0.60) < (old_count / total_count)
       end
 
       tokens.last.word
