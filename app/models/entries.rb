@@ -5,7 +5,7 @@ class Entries < ActiveRecord::Base
     other = []
     scope = Entries.select('word, sum(count) as count').where(gram_1: gram_1)
     if gram_2.nil?
-      other = Entries.select('gram_1 as word, sum(count) as count').where(gram_2: gram_1).group(:word).order('count DESC').to_a
+      other = Entries.select('gram_1 as word, sum(count) as count').where(gram_2: gram_1).group(:gram_1).order('count DESC').to_a
     else
       scope = scope.where(gram_2: gram_2)
     end
