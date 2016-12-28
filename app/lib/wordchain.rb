@@ -20,9 +20,9 @@ class WordChain
       ap(tokens.first(10))
 
       old_count = 0
-      total_count = tokens.map(&:total).inject(0, :+)
+      total_count = tokens.map(&:count).inject(0, :+)
       tokens.each do |entries|
-        old_count += entries.total
+        old_count += entries.count
         return entries.word if (rand * 1.25) < (old_count / total_count)
       end
 
