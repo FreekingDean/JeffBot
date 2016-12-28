@@ -21,7 +21,7 @@ class WordChain
         token.probability = (1.0/(2.00**(index+1)))
       end
 
-      random_num = rand*0.75
+      random_num = rand*0.65
 
       tokens.each do |entries|
         if (random_num) < (entries.probability)
