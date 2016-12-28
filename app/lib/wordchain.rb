@@ -17,19 +17,17 @@ class WordChain
 
     def find_best_token(tokens)
       return '' unless tokens.any?
-      ap(tokens.first(10))
+      tokens.each_with_index do |token, index|
+        token.probability = (1.0/(2.00**(index+1)))
+      end
 
-      old_count = 0
-      total_count = tokens.map(&:count).uniq.inject(0, :+)
+      random_num = rand*0.75
+
       tokens.each do |entries|
-        old_count += entries.count
-        random_num = rand
-        if (random_num) < (old_count / total_count)
-          ap random_num
-          ap total_count
-          ap entries
+        if (random_num) < (entries.probability)
           return entries.word
         end
+        random_num -= entries.probability
       end
 
       tokens.last.word
