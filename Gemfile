@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 gem 'bunny'
 gem 'standalone_migrations'
@@ -12,6 +12,7 @@ gem 'json'
 gem 'awesome_print'
 gem 'celluloid-io'
 gem 'colorize'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rubocop', require: false
