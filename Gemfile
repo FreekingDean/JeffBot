@@ -7,12 +7,10 @@ gem 'standalone_migrations'
 gem 'pg'
 gem 'rake'
 gem 'engtagger'
-gem 'xml-simple'
 gem 'json'
 gem 'awesome_print'
 gem 'celluloid-io'
 gem 'colorize'
-gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rubocop', require: false
