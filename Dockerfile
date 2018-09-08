@@ -4,7 +4,7 @@ RUN apk add --update build-base nodejs tzdata openssl git postgresql-dev linux-h
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64
 RUN chmod +x /usr/local/bin/dumb-init
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
 COPY . /app
 WORKDIR /app
@@ -14,4 +14,4 @@ EXPOSE 3000
 RUN gem install bundler
 RUN bundle install --without development:test --system
 
-CMD ["sh", "-c", "exec bundle exec puma -C config/puma.rb"]
+CMD ["sh", "-c", "bundle exec ruby app/main.rb"]
